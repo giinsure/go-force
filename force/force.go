@@ -16,10 +16,11 @@ const (
 	testPassword      = "golangrocks3"
 	testSecurityToken = "kAlicVmti9nWRKRiWG3Zvqtte"
 	testEnvironment   = "production"
+	loginUrl          = "https://mycompany.sandbox.my.salesforce.com"
 )
 
 func Create(version, clientId, clientSecret, userName, password, securityToken,
-	environment string) (*ForceApi, error) {
+	environment string, loginUrl string) (*ForceApi, error) {
 	oauth := &forceOauth{
 		clientId:      clientId,
 		clientSecret:  clientSecret,
@@ -27,6 +28,7 @@ func Create(version, clientId, clientSecret, userName, password, securityToken,
 		password:      password,
 		securityToken: securityToken,
 		environment:   environment,
+		loginUrl:      loginUrl,
 	}
 
 	forceApi := &ForceApi{
@@ -129,7 +131,7 @@ func CreateWithRefreshToken(version, clientId, accessToken, instanceUrl string) 
 
 // Used when running tests.
 func createTest() *ForceApi {
-	forceApi, err := Create(testVersion, testClientId, testClientSecret, testUserName, testPassword, testSecurityToken, testEnvironment)
+	forceApi, err := Create(testVersion, testClientId, testClientSecret, testUserName, testPassword, testSecurityToken, testEnvironment, loginUrl)
 	if err != nil {
 		fmt.Printf("Unable to create ForceApi for test: %v", err)
 		os.Exit(1)

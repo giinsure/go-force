@@ -31,6 +31,7 @@ type forceOauth struct {
 	password      string
 	securityToken string
 	environment   string
+	loginUrl      string
 }
 
 func (oauth *forceOauth) Validate() error {
@@ -61,7 +62,7 @@ func (oauth *forceOauth) Authenticate() error {
 	}
 
 	// Build Uri
-	uri := loginUri
+	uri := oauth.loginUrl
 	if oauth.environment == "sandbox" {
 		uri = testLoginUri
 	}
