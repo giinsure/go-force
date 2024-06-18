@@ -1,23 +1,25 @@
-go-force
-======
-<p align="center">
-  <a href="https://goreportcard.com/report/github.com/nimajalali/go-force"><img src="https://goreportcard.com/badge/github.com/nimajalali/go-force" alt="Go Report Card"></a>
-  <a href="https://github.com/nimajalali/go-force/actions?query=workflow%3Abuild"><img src="https://github.com/nimajalali/go-force/workflows/build/badge.svg" alt="build status"></a>
-  <a href="https://github.com/nimajalali/go-force/blob/master/go.mod"><img src="https://img.shields.io/github/go-mod/go-version/nimajalali/go-force" alt="Go version"></a>
-  <a href="https://github.com/nimajalali/go-force/releases"><img src="https://img.shields.io/github/v/release/nimajalali/go-force.svg" alt="Current Release"></a>
-  <a href="https://godoc.org/github.com/nimajalali/go-force"><img src="https://godoc.org/github.com/nimajalali/go-force?status.svg" alt="godoc"></a>
-  <a href="https://gocover.io/github.com/nimajalali/go-force/force"><img src="https://gocover.io/_badge/github.com/nimajalali/go-force/force" alt="Coverage"></a>
-  <a href="https://github.com/nimajalali/go-force/blob/master/LICENSE"><img src="https://img.shields.io/github/license/nimajalali/go-force" alt="License"></a>
-</p>
+# go-force
+
+
+[![Go Report Card](https://goreportcard.com/badge/github.com/giinsure/go-force)](https://goreportcard.com/report/github.com/giinsure/go-force)
+[![build status](https://github.com/giinsure/go-force/workflows/build/badge.svg)](https://github.com/giinsure/go-force/actions?query=workflow%3Abuild)
+[![Go version](https://img.shields.io/github/go-mod/go-version/giinsure/go-force)](https://github.com/giinsure/go-force/blob/master/go.mod)
+[![Current Release](https://img.shields.io/github/v/release/giinsure/go-force.svg)](https://github.com/giinsure/go-force/releases)
+[![godoc](https://godoc.org/github.com/giinsure/go-force?status.svg)](https://godoc.org/github.com/giinsure/go-force)
+<!-- [![Go Coverage](https://github.com/giinsure/go-force/wiki/coverage.svg)](https://raw.githack.com/wiki/giinsure/go-force/coverage.html) -->
+[![License](https://img.shields.io/github/license/giinsure/go-force)](https://github.com/giinsure/go-force/blob/master/LICENSE)
 
 [Golang](http://golang.org/) API wrapper for [Force.com](http://www.force.com/), [Salesforce.com](http://www.salesforce.com/)
 
-Installation
-============
-	go get github.com/nimajalali/go-force/force
 
-Example
-============
+This repo is based on https://github.com/nimajalali/go-force which seems to be dormant with the last commit 4 years ago at this time (01/2024).
+
+## Installation
+
+	go get github.com/giinsure/go-force/force
+
+## Example
+
 ```go
 package main
 
@@ -25,8 +27,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/nimajalali/go-force/force"
-	"github.com/nimajalali/go-force/sobjects"
+	"github.com/giinsure/go-force/force"
+	"github.com/giinsure/go-force/sobjects"
 )
 
 type SomeCustomSObject struct {
@@ -80,8 +82,8 @@ func main() {
 	fmt.Printf("%#v", someCustomSObjects)
 }
 ```
-Documentation 
-=======
 
-* [Package Reference](http://godoc.org/github.com/nimajalali/go-force/force)
+## Documentation 
+
+* [Package Reference](http://godoc.org/github.com/giinsure/go-force/force)
 * [Force.com API Reference](http://www.salesforce.com/us/developer/docs/api_rest/)
