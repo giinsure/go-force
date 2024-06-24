@@ -63,9 +63,10 @@ func (oauth *forceOauth) Authenticate() error {
 
 	// Build Uri
 	uri := oauth.loginUrl
-	if oauth.environment == "sandbox" {
-		uri = testLoginUri
-	}
+	//uri := loginUri
+	// if oauth.environment == "sandbox" {
+	// 	uri = testLoginUri
+	// }
 
 	// Build Body
 	body := strings.NewReader(payload.Encode())
