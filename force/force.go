@@ -9,13 +9,13 @@ import (
 )
 
 const (
-	testVersion       = "v36.0"
-	testClientId      = "3MVG9A2kN3Bn17hs8MIaQx1voVGy662rXlC37svtmLmt6wO_iik8Hnk3DlcYjKRvzVNGWLFlGRH1ryHwS217h"
-	testClientSecret  = "4165772184959202901"
-	testUserName      = "go-force@jalali.net"
-	testPassword      = "golangrocks3"
-	testSecurityToken = "kAlicVmti9nWRKRiWG3Zvqtte"
-	testEnvironment   = "production"
+	testVersion       = "v61.0"
+	testClientId      = ""
+	testClientSecret  = ""
+	testUserName      = ""
+	testPassword      = ""
+	testSecurityToken = ""
+	testEnvironment   = "staging"
 	loginUrl          = "https://mycompany.sandbox.my.salesforce.com"
 )
 

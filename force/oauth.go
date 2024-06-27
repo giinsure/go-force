@@ -3,7 +3,7 @@ package force
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -11,8 +11,8 @@ import (
 
 const (
 	grantType    = "password"
-	loginUri     = "https://login.salesforce.com/services/oauth2/token"
-	testLoginUri = "https://test.salesforce.com/services/oauth2/token"
+	loginUri     = "https://mycompany.sandbox.my.salesforce.com/services/oauth2/token"
+	testLoginUri = "https://mycompany.sandbox.my.salesforce.com/services/oauth2/token"
 
 	invalidSessionErrorCode = "INVALID_SESSION_ID"
 )
@@ -63,10 +63,10 @@ func (oauth *forceOauth) Authenticate() error {
 
 	// Build Uri
 	uri := oauth.loginUrl
-	//uri := loginUri
-	// if oauth.environment == "sandbox" {
-	// 	uri = testLoginUri
-	// }
+
+	if !strings.Contains(uri, "services/oauth2/token") {
+		uri = oauth.loginUrl + "/services/oauth2/token"
+	}
 
 	// Build Body
 	body := strings.NewReader(payload.Encode())
@@ -88,7 +88,11 @@ func (oauth *forceOauth) Authenticate() error {
 	}
 	defer resp.Body.Close()
 
-	respBytes, err := ioutil.ReadAll(resp.Body)
+	respBytes, err := io.ReadAll(resp.Body)
+
+	// For Debugging
+	// fmt.Print(string(respBytes))
+
 	if err != nil {
 		return fmt.Errorf("Error reading authentication response bytes: %v", err)
 	}

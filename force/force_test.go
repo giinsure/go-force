@@ -16,6 +16,7 @@ func TestCreateWithAccessToken(t *testing.T) {
 		password:      testPassword,
 		securityToken: testSecurityToken,
 		environment:   testEnvironment,
+		loginUrl:      loginUrl,
 	}
 
 	forceApi := &ForceApi{
